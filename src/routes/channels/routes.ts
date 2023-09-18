@@ -5,7 +5,7 @@ import {Channel} from '../../entity/Channel'
 const router = Router();
 
 router.get('/channel', async (req, res) => {
-    const data = AppDataSource.getRepository(Channel)
+    const data = await AppDataSource.getRepository(Channel)
         .createQueryBuilder("channel")
         .getMany()
     res.json(data) 

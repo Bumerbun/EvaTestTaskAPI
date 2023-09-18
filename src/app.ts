@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import channels from './routes/channels/routes'
 import channelMessages from './routes/channelMessages/routes'
+import keyboardTypes from './routes/keyboardTypes/routes'
 
 const express = require('express')
 const app = express();
@@ -17,5 +18,6 @@ app.use(function(_req: Request, res: Response, next: NextFunction) {
 
 app.use("/", channels)
 app.use("/", channelMessages)
+app.use("/", keyboardTypes)
 
 export default app;

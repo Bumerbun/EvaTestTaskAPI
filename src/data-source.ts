@@ -3,6 +3,7 @@ import { DataSource } from "typeorm";
 import { AnswerButton } from "./entity/AnswerButton";
 import { Channel } from "./entity/Channel";
 import { ChannelMessage } from "./entity/ChannelMessage";
+import { KeyboardType } from "./entity/KeyboardType";
 
 const AppDataSource = new DataSource({
     type: "postgres",
@@ -11,12 +12,12 @@ const AppDataSource = new DataSource({
     username: "main",
     password: "",
     database: "TestTaskEVAdb",
-    entities: [AnswerButton, Channel, ChannelMessage],
+    entities: [AnswerButton, Channel, ChannelMessage, KeyboardType],
     synchronize: true
   })
 AppDataSource.initialize()
   .then(async () => {
-    console.log("Connection initialized with database...");
+    console.log("Connection initialized with database");
   })
   .catch((error) => console.log(error));
 
